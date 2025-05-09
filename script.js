@@ -1,15 +1,17 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-
+// Import Firebase modules via CDN
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
-  measurementId: ""
+  apiKey: "AIzaSyAvluT8_QNTBWRgj8xIPFBaDDseMS96BzU",
+  authDomain: "ict-vet-clinic.firebaseapp.com",
+  databaseURL: "https://ict-vet-clinic-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "ict-vet-clinic",
+  storageBucket: "ict-vet-clinic.appspot.com",
+  messagingSenderId: "97444328393",
+  appId: "1:97444328393:web:307292033493a24b09ae18",
+  measurementId: "G-EBDSWZSPT5"
 };
 
 // Initialize Firebase
@@ -17,9 +19,10 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
 
+// Handle form submission
 document.getElementById("appointmentForm").addEventListener("submit", function (e) {
     e.preventDefault();
-    console.log("Form submitted"); 
+    console.log("Form submitted");
 
     const title = document.getElementById("title").value;
     const message = document.getElementById("message").value;
