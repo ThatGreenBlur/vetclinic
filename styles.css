@@ -17,6 +17,14 @@ body {
     text-shadow: 2px 2px 5px rgba(26, 148, 219, 0.24);
 }
 
+.bodyheader2 {
+    padding: 10px 0;
+    font-family: monospace, sans-serif;
+    font-size: 2.5em;
+    color:#fff;
+    text-shadow: 2px 2px 5px #8bc5fcd2;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -29,7 +37,7 @@ header {
     color: #ffffffee;
     padding: 10px 0;
     font-family: monospace, sans-serif;
-    font-size: 1.2em;
+    font-size: 1.25em;
     position: fixed;
     width: 100%;
     top: 0;
@@ -57,16 +65,57 @@ nav {
     margin-left: 20px;
 }
 
+@media (max-width: 800px) {
+    .nav-links li {
+        display: none; 
+    }
+}
+
 .nav-links li a {
+    display: flex;
+    align-items: center;
     color: #fff;
     text-decoration: none;
-    padding-top: 10px 10px;
-    display: inline-block;
     transition: background-color 0.3s;
 }
 
+.nav-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.nav-text {
+    color: #fff;
+    display: inline; 
+    padding: 7.5;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .nav-text {
+        display: none; 
+    }
+}
+
+.nav-signtext {
+    color: #8BC6FC;
+    display: inline; 
+    padding: 7.5;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.nav-signtext:hover {
+    color: #8ee29c; 
+    text-decoration: underline;
+}
+
 .nav-links li a:hover {
-    background-color: #555;
+    background-color: #8ee29c;
 }
 
 .content {
@@ -85,21 +134,48 @@ nav {
     vertical-align: middle; 
 }
 .image-container {
-    background-color:#6c9bb6; 
-    display: flex; 
-    justify-content: center;
+    background-color: #6c9bb6; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
     padding: 0;
-    width: 100vw; 
-    margin: 0; 
-    position: relative; 
-    left: 0; 
-    max-width: none; 
-    box-sizing: border-box; 
+    width: 100%; 
+    margin: 10 auto; 
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden; 
 }
+
 .cover-image {
-    width: 50%;
-    height: auto; 
-    display: block; 
+    width: 100%; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin: 0;
+    padding: 0; 
+}
+
+
+@media (min-width: 1024px) {
+    .cover-image {
+        width: 50%; 
+        max-width: 1000px; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        width: 100%;
+    }
+
+    .cover-image {
+        width: 100%; 
+        height: auto; 
+    }
 }
 .services-grid {
     display: flex;
@@ -123,13 +199,14 @@ label {
 }
 
 textarea {
-    width: 100%;
+    width: 75%;
     height: 200px; 
     font-size: 1.1em; 
     padding: 10px; 
     box-sizing: border-box; 
     resize: none;
 }
+
 input, .button {
     font-size: 1.1em; 
     padding: 10px;
@@ -141,4 +218,49 @@ form {
 
 form > * {
     margin-bottom: 15px;
+}
+
+.team-section {
+    padding: 50px 20px;
+    background-color: #6c9bb6;
+}
+
+.team-section h2 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.team-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-info {
+    max-width: 600px;
+    text-align: left;
+}
+
+.team-info h3 {
+    margin: 0;
+    font-size: 1.75rem;
+    color: #fff;
+}
+
+.team-info p {
+    margin: 10px 0 0;
+    font-size: 1.25rem;
+    color: #eeeded;
+    line-height: 1.5;
 }
